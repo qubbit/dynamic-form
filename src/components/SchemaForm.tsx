@@ -5,10 +5,14 @@ import { validateForm } from '../utils/validation';
 import FormField from './FormFields';
 import '../index.css';
 
+// Use this for rendering for the form as a card
+const CARD_CLASSNAME = "max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg";
+
 interface SchemaFormProps {
   schema: FormSchema;
   onSubmit: (data: FormData) => void;
   initialValues?: FormData;
+  className?: string;
 }
 
 export const SchemaForm: React.FC<SchemaFormProps> = ({ schema, onSubmit, initialValues = {} }) => {
@@ -49,7 +53,7 @@ export const SchemaForm: React.FC<SchemaFormProps> = ({ schema, onSubmit, initia
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg">
+    <form onSubmit={handleSubmit} className={className}>
       {schema.title && <h1 className="text-3xl font-bold text-gray-800 mb-6">{schema.title}</h1>}
 
       <div className="space-y-4">
@@ -68,7 +72,7 @@ export const SchemaForm: React.FC<SchemaFormProps> = ({ schema, onSubmit, initia
 
       <button
         type="submit"
-        className="mt-6 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center gap-2 transition-colors"
+        className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center gap-2 transition-colors"
       >
         <Save className="w-4 h-4" /> Save
       </button>

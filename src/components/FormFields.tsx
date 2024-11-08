@@ -60,7 +60,7 @@ const FormField: React.FC<FieldProps> = ({ field, value, onChange, error }) => {
               onChange={(e) => onChange(e.target.checked)}
               className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
             />
-            <span className="text-sm text-gray-600">Yes</span>
+            <span className="text-gray-600">Yes</span>
           </div>
         );
 
@@ -121,7 +121,7 @@ const FormField: React.FC<FieldProps> = ({ field, value, onChange, error }) => {
                   }}
                   className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
                 />
-                <span className="text-sm text-gray-600">{option.label}</span>
+                <span className="text-gray-600">{option.label}</span>
               </label>
             ))}
           </div>
@@ -134,13 +134,13 @@ const FormField: React.FC<FieldProps> = ({ field, value, onChange, error }) => {
 
   return (
     <div className="mb-4">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
+      <label className="block font-medium text-gray-700 mb-1">
         {field.label}
         {field.required && <span className="text-red-500 ml-1">*</span>}
       </label>
       {renderField()}
       {error && (
-        <div className="mt-1 text-red-600 text-sm flex items-center gap-1">
+        <div className="mt-1 text-red-600 flex items-center gap-1">
           <AlertCircle className="w-4 h-4" />
           <span>{error}</span>
         </div>

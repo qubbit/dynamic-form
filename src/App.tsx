@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="md:text-2xl min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <SchemaForm 
           schema={userProfileSchema} 

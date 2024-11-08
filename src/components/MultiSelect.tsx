@@ -50,7 +50,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           return (
             <span
               key={selectedValue}
-              className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-800 rounded-md text-sm"
+              className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-800 rounded-md"
             >
               {option?.label}
               <button

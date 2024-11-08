@@ -49,7 +49,7 @@ export const DynamicFields: React.FC<DynamicFieldsProps> = ({
       <button
         type="button"
         onClick={handleAdd}
-        className="inline-flex items-center gap-2 px-4 py-2 text-sm text-blue-600 hover:text-blue-800 rounded-md hover:bg-blue-50"
+        className="inline-flex items-center gap-2 px-4 py-2 text-blue-600 hover:text-blue-800 rounded-md hover:bg-blue-50"
       >
         <Plus className="w-4 h-4" />
         Add Field

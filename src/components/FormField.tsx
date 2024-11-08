@@ -12,12 +12,12 @@ interface FormFieldProps {
 export const FormField: React.FC<FormFieldProps> = ({ label, error, children }) => {
   return (
     <div className="mb-4">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
+      <label className="block font-medium text-gray-700 mb-1">
         {label}
       </label>
       {children}
       {error && (
-        <div className="mt-1 text-red-600 text-sm flex items-center gap-1">
+        <div className="mt-1 text-red-600 flex items-center gap-1">
           <AlertCircle className="w-4 h-4" />
           <span>{error}</span>
         </div>

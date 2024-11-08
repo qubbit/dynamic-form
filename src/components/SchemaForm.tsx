@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Save } from 'lucide-react';
 import { FormSchema, FormData, ValidationError } from '../types/schema';
 import { validateForm } from '../utils/validation';
@@ -7,11 +7,16 @@ import FormField from './FormFields';
 interface SchemaFormProps {
   schema: FormSchema;
   onSubmit: (data: FormData) => void;
+  initialValues?: FormData;
 }
 
-export const SchemaForm: React.FC<SchemaFormProps> = ({ schema, onSubmit }) => {
-  const [formData, setFormData] = useState<FormData>({});
+export const SchemaForm: React.FC<SchemaFormProps> = ({ schema, onSubmit, initialValues = {} }) => {
+  const [formData, setFormData] = useState<FormData>(initialValues);
   const [errors, setErrors] = useState<ValidationError[]>([]);
+
+  useEffect(() => {
+    setFormData(initialValues);
+  }, [initialValues]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

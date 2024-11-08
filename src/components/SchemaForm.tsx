@@ -3,6 +3,7 @@ import { Save } from 'lucide-react';
 import { FormSchema, FormData, ValidationError } from '../types/schema';
 import { validateForm } from '../utils/validation';
 import FormField from './FormFields';
+import '../index.css';
 
 interface SchemaFormProps {
   schema: FormSchema;

@@ -110,12 +110,24 @@ export const userProfileSchema: FormSchema = {
         { value: "Node.js", label: "Node.js" },
         { value: "Python", label: "Python" },
         { value: "UI/UX Design", label: "UI/UX Design" },
-        { value: "Project Management", label: "Project Management" }
+        { value: "Project Management", label: "Project Management" },
+        { value: "Angular", label: "Angular" },
+        { value: "Vue.js", label: "Vue.js" },
+        { value: "Docker", label: "Docker" },
+        { value: "AWS", label: "AWS" },
+        { value: "DevOps", label: "DevOps" }
       ],
       validation: {
         min: 1,
         message: "Please select at least one skill"
       }
+    },
+    {
+      type: "string",
+      name: "certifications",
+      label: "Certifications",
+      multiple: true,
+      placeholder: "Enter certification name"
     }
   ]
 };

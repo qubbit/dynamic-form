@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AlertCircle } from 'lucide-react';
 import { FieldSchema } from '../types/schema';
+import { MultiSelect } from './MultiSelect';
+import { DynamicFields } from './DynamicFields';
 
 interface FieldProps {
   field: FieldSchema;
@@ -15,6 +17,15 @@ const FormField: React.FC<FieldProps> = ({ field, value, onChange, error }) => {
   const renderField = () => {
     switch (field.type) {
       case 'string':
+        if (field.multiple) {
+          return (
+            <DynamicFields
+              values={value || []}
+              onChange={onChange}
+              placeholder={field.placeholder}
+            />
+          );
+        }
         return (
           <input
             type={field.name === 'email' ? 'email' : field.name === 'portfolio' ? 'url' : 'text'}
@@ -84,6 +95,16 @@ const FormField: React.FC<FieldProps> = ({ field, value, onChange, error }) => {
         );
 
       case 'array':
+        if (field.options && field.options.length > 8) {
+          return (
+            <MultiSelect
+              options={field.options}
+              value={value || []}
+              onChange={onChange}
+              placeholder={`Select ${field.label}`}
+            />
+          );
+        }
         return (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {field.options?.map((option) => (

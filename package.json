@@ -1,6 +1,6 @@
 {
   "name": "@qubbit/dynamic-form",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A beautiful, production-ready schema-based form builder for React applications",
   "type": "module",
   "main": "dist/index.js",

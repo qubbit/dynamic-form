@@ -4,6 +4,7 @@ export interface FieldSchema {
   name: string;
   required?: boolean;
   placeholder?: string;
+  multiple?: boolean;
   validation?: {
     min?: number;
     max?: number;
@@ -19,7 +20,7 @@ export interface FieldSchema {
 }
 
 export interface FormSchema {
-  title?: string;
+  title: string;
   fields: FieldSchema[];
 }
 

@@ -19,7 +19,7 @@ export interface FieldSchema {
 }
 
 export interface FormSchema {
-  title: string;
+  title?: string;
   fields: FieldSchema[];
 }
 

@@ -3,10 +3,6 @@ import { Save } from 'lucide-react';
 import { FormSchema, FormData, ValidationError } from '../types/schema';
 import { validateForm } from '../utils/validation';
 import FormField from './FormFields';
-import '../index.css';
-
-// Use this for rendering for the form as a card
-const CARD_CLASSNAME = "max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg";
 
 interface SchemaFormProps {
   schema: FormSchema;
@@ -15,7 +11,10 @@ interface SchemaFormProps {
   className?: string;
 }
 
-export const SchemaForm: React.FC<SchemaFormProps> = ({ schema, onSubmit, initialValues = {} }) => {
+// Use this for rendering for the form as a card
+const CARD_CLASSNAME = "max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg";
+
+export const SchemaForm: React.FC<SchemaFormProps> = ({ className, schema, onSubmit, initialValues = {} }) => {
   const [formData, setFormData] = useState<FormData>(initialValues);
   const [errors, setErrors] = useState<ValidationError[]>([]);
 
